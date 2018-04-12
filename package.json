@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/will-miller93/Hawt_Restaurant#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "path": "^0.12.7"
   }
 }
