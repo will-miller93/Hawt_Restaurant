@@ -1,7 +1,7 @@
 {
-  "name": "hawt_restaurant",
+  "name": "Hawt_Restaurant",
   "version": "1.0.0",
-  "description": "\"Hawt Restaurant reservation app\"",
+  "description": "Basic app demonstrating Node and Express with jQuery. Overall purpose is to help schedule reservation requests. Restaurant has just 5 tables available. First five requests get a reservation, every request after that is sent to the waiting list.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,6 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/will-miller93/Hawt_Restaurant.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
