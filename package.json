@@ -1,0 +1,25 @@
+{
+  "name": "hawt_restaurant",
+  "version": "1.0.0",
+  "description": "\"Hawt Restaurant reservation app\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/will-miller93/Hawt_Restaurant.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/will-miller93/Hawt_Restaurant/issues"
+  },
+  "homepage": "https://github.com/will-miller93/Hawt_Restaurant#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "path": "^0.12.7"
+  }
+}
