@@ -3,15 +3,21 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
+var twilio = require('twilio');
 
 // Sets up the Express App
 // =============================================================
 var app = express();
 var PORT = process.env.PORT || 3000;
 
+//Initiate Twilio
+var accountSid = 'ACe04cad0b18b2fe13dd2a6c91abb821f9';
+var authToken = "b0dba8b2dd3da1d5bacae0b5753975b1";
+var twilioNum = '+16782632968';
+var client = new twilio(accountSid,authToken);
 
 // Sets up the Express app to handle data parsing
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Arrays for the data: 
@@ -75,8 +81,30 @@ app.post("/api/clear", function (req, res) {
     waitingList = [];
 })
 
+app.post('/api/tables/ready', function (req, res) {
+	console.log('Notifying '+req.body.name+' that table is ready');
+	client.messages.create({
+		to: phoneformatte(req.body.phone),
+		from: twilioNum,
+		body: req.body.name+', Your table is ready!',
+	}).then(function (message) {
+		//console.log(message);
+		res.send(true);
+	});
+});
+
 // server listening
 app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
 });
 
+//helper function to convert assorted number formats to E.164 ITU-T standard
+function phoneformatter(num) {
+    num = num.split('');
+    var filter = num.filter((char)=> char>='0' && char<='9')
+    var e164 = '+1';
+    for (i in filter) {
+        e164+=filter[i];
+    }
+    return e164;
+}
