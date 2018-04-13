@@ -44,10 +44,10 @@ app.get("/reserve", function (req, res) {
 });
 
 // post to be able to view the reservations
-app.post("/reserve", function (req, res) {
+app.post("/api/tables", function (req, res) {
     var newReservation = req.body;
-    // name, number, email, unique ID
-    newReservation.routeName = newReservation.name
+    // name, number, email, size    newReservation.routeName = newReservation.name
+	console.log(newReservation);
 
 });
 
