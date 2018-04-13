@@ -59,8 +59,15 @@ app.post("/api/tables", function (req, res) {
 
 });
 
-// routes for diplaying HTML Data
+app.get("/api/tables", function (req, res) {
+	console.log('sending table data');
+	res.send(resArr);
+});
 
+app.get("/api/waitlist", function (req, res) {
+	console.log('sending waitlist data');
+	res.send(waitingList);
+});
 
 // server listening
 app.listen(PORT, function () {
