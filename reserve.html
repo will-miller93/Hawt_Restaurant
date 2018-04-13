@@ -92,9 +92,9 @@
 
       // Here we grab the form elements
       var newReservation = {
-        customerName: $("#reserve-name").val().trim(),
-        phoneNumber: $("#reserve-phone").val().trim(),
-        customerEmail: $("#reserve-email").val().trim(),
+        name: $("#reserve-name").val().trim(),
+        phon: $("#reserve-phone").val().trim(),
+        email: $("#reserve-email").val().trim(),
         size: $("#table-size").val().trim()
       };
 
@@ -122,7 +122,7 @@
           $("#reserve-name").val("");
           $("#reserve-phone").val("");
           $("#reserve-email").val("");
-          $("#reserve-unique-id").val("");
+          $("#table-size").val("");
 
         });
 

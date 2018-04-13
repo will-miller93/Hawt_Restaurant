@@ -46,8 +46,16 @@ app.get("/reserve", function (req, res) {
 // post to be able to view the reservations
 app.post("/api/tables", function (req, res) {
     var newReservation = req.body;
-    // name, number, email, size    newReservation.routeName = newReservation.name
-	console.log(newReservation);
+	//console.log(newReservation);
+	if (resArr.length<5) {
+		resArr.push(newReservation);
+		console.log('Reserved: '+newReservation.name+', Party of '+newReservation.size);
+		res.send(true);
+	} else {
+		waitingList.push(newReservation);
+		console.log('Waitlisted: '+newReservation.name+', Party of '+newReservation.size);
+		res.send(false);
+	}
 
 });
 
